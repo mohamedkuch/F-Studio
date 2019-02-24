@@ -1,91 +1,35 @@
-$(window).scroll(function() {
-  if ($(this).scrollTop() > 500) {
-    $("#upArrow").addClass("pageUpArrow ");
- 
-  } else {
-      $("#upArrow").removeClass("pageUpArrow ");
- 
-  }
-
-  if ($(this).scrollTop() > 1000) {
-    $('.counter').each(function() {
-      var $this = $(this),
-          countTo = $this.attr('data-count');
-      $({ countNum: $this.text()}).animate({
-        countNum: countTo
-      },
-      {
-        duration: 2000,
-        easing:'linear',
-        step: function() {
-          $this.text(Math.floor(this.countNum));
-        },
-        complete: function() {
-          $this.text(this.countNum);
-          //alert('finished');
-        }
-      });  
-    });
-  }
-});
-$(document).ready(function(){
-  $('.carouselSlick2').slick({
-    infinite: true,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    dots: true,
-    arrows: true,
-    speed: 300,
-    adaptiveHeight: true,
-    responsive: [
-      {
-        breakpoint: 992,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1
-        }
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-      // You can unslick at a given breakpoint now by adding:
-      // settings: "unslick"
-      // instead of a settings object
-    ]
-  });
-
-});
-$(document).ready(function(){
-  $('.carouselSlick').slick({
-    infinite: true,
-    slidesToShow: 2,
-    slidesToScroll: 1,
-    dots: true,
-    speed: 300,
-    adaptiveHeight: true,
-    responsive: [
-      {
-        breakpoint: 992,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-      // You can unslick at a given breakpoint now by adding:
-      // settings: "unslick"
-      // instead of a settings object
-    ]
-  });
-
+$(function(){
+	$(".typed").typed({
+		strings: ["UI/UX Designer", "Web Developper", "Student"],
+		// Optionally use an HTML element to grab strings from (must wrap each string in a <p>)
+		stringsElement: null,
+		// typing speed
+		typeSpeed: 30,
+		// time before typing starts
+		startDelay: 1200,
+		// backspacing speed
+		backSpeed: 20,
+		// time before backspacing
+		backDelay: 500,
+		// loop
+		loop: true,
+		// false = infinite
+		loopCount: 5,
+		// show cursor
+		showCursor: false,
+		// character for cursor
+		cursorChar: "|",
+		// attribute to type (null == text)
+		attr: null,
+		// either html or text
+		contentType: 'html',
+		// call when done callback function
+		callback: function() {},
+		// starting callback function before each string
+		preStringTyped: function() {},
+		//callback for every typed string
+		onStringTyped: function() {},
+		// callback for reset
+		resetCallback: function() {}
+	});
 });
