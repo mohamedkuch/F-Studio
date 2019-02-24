@@ -28,6 +28,7 @@ body {
 }
 .nav-link:hover {
   border-bottom: 3px solid #8e44ad;
+  color:#8e44ad !important;
 }
 .bigTitleSpan {
   color: black;
